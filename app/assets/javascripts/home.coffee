@@ -15,7 +15,7 @@ $ ->
     [nh, nw]
 
   getLocation = ->
-    posA = {top:[], left: [], gender: []}
+    posA = {top:[], left: [], gender: [], el: []}
 
     $.each $('.human'), (i, v) ->
       if $(v).attr('data-energy') <= 0
@@ -42,9 +42,14 @@ $ ->
 
         if gender != sGender
           generatePop()
+
+          # Parents will die
+          $(v).remove()
+          posA.el[gIndex].remove()
         else
           animateThis(v)
       else
+        posA.el.push($(v))
         posA.top.push(pos.top)
         posA.left.push(pos.left)
 
@@ -92,7 +97,7 @@ $ ->
     setTimeout(deathClock, 1000)
 
   i = 0
-  while i <= 20
+  while i <= 50
     generatePop()
 
     i++
