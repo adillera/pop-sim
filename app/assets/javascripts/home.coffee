@@ -44,8 +44,8 @@ $ ->
           generatePop()
 
           # Parents will die
-          $(v).remove()
-          posA.el[gIndex].remove()
+          #$(v).remove()
+          #posA.el[gIndex].remove()
         else
           animateThis(v)
       else
@@ -97,7 +97,7 @@ $ ->
     setTimeout(deathClock, 1000)
 
   i = 0
-  while i <= 50
+  while i <= 20
     generatePop()
 
     i++
