@@ -89,7 +89,7 @@ $ ->
 
       elem.attr('data-energy', energy - 1)
 
-    setTimeout(deathClock, 2000)
+    setTimeout(deathClock, 1000)
 
   i = 0
   while i <= 20
